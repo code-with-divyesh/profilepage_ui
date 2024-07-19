@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:profilepage_ui/appbar.dart';
+import 'package:profilepage_ui/posts.dart';
+import 'package:profilepage_ui/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,15 +14,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Container(
-        color: const Color.fromARGB(255, 117, 106, 4),
-        child: Stack(
-          children: [
-            Container(
-              child: Row(),
-            )
-          ],
-        ),
+      home: Scaffold(
+        backgroundColor: Colors.purple,
+        body: ListView(children: [
+          Stack(
+            children: [
+              MyPosts(),
+              Profile(),
+              MyAppBar(),
+            ],
+          ),
+        ]),
       ),
     );
   }
